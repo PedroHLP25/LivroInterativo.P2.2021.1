@@ -1,0 +1,162 @@
+CAPITULO_COM_IMAGEM
+ID
+Raiz
+PERSONAGENS
+Protagonista
+Antagonista
+TEXTO
+Capítulo 1 - Batalha de LostRed o começo\n tudo começou da rivalidade entre cavaleiros e magos do reino de Teragon um certo dia ambos os líderes se enfretaram e o líder dos cavaleiros 
+Protagonista
+sofreu um ataque do líder dos magos
+Antagonista
+,o que ele fará
+VARIACOES
+-50
+0
+IMAGEM
+
+                                                                                                   @@@@@@@@@
+                                                                                                @@@@@@@@@@@@@@@
+                                                                                                @@@@@@@@@@@@@@@
+              Reino                                                                             @@@@@@@@@@@@@@@                        
+               De                                             ^                                 @@@@@@@@@@@@@@@                     
+              Teragon                                        ^^^                                @@@@@@@@@@@@@@@                  
+                  (Castelo)                                ^^^^^^^                                @@@@@@@@@@@               
+                                                    ^^^^^^^^^^^^^^^^^^^^                                              
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                         
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                   
+                           ^                   --------------------------------                       ^               
+                          ^^^                  |                              |                      ^^^                
+                         ^^^^^                 |                              |                     ^^^^^                 
+                    ^^^^^^^^^^^^^^^            |                              |                ^^^^^^^^^^^^^^^^
+                     |           |             |                              |                 |            |
+                     |           |-------------|                              |-----------------|            |
+                     |           |-------------|                              |-----------------|            |
+                     |           |-----||------|                              |-------||--------|            |
+                     |           |-----||------|                              |-------||--------|            |
+                     |-----------|-----||------|                              |-------||--------|------------|
+                     |           |-----||------|                              |-------||--------|            |
+                     |           |-----||------|                              |-------||--------|            |
+  ------  -----  ----|           |-----||------|                              |-------||--------|            |------  -------  --------
+  |    |  |   |  |   |           |-----||------|      @@@@@@@@@@@@@@@@@       |-------||--------|            |     |  |     |  |      |
+  |    |  |   |  |   |           |-------------|      @               @       |-----------------|            |     |  |     |  |      |
+  |____|__|___|__|___|           |-------------|      @               @       |-----------------|            |_____|__|_____|__|______|
+ |                   |           |             |      @               @       |                 |            |                         |
+ |                   |           |             |      @               @       |                 |            |                         |
+ |                   |           |             |      @               @       |                 |            |                         |
+ |                   |           |             |      @               @       |                 |            |                         |
+ |                   |           |             |      @               @       |                 |            |                         |
+ |                   |           |             |      @               @       |                 |            |                         |    
+ |                   |           |             |      @               @       |                 |            |                         |   
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+IMAGEM_FIM
+
+
+CAPITULO
+ID
+CavaleirosGanham
+PERSONAGENS
+Protagonista
+Antagonista
+TEXTO
+O Líder dos cavaleiros 
+Protagonista
+ataca e com isso mata o líder dos magos
+Antagonista
+e por fim, os cavaleiros ganham a guerra.
+VARIACOES
+0
+-100
+
+
+CAPITULO
+ID
+CavaleiroDecide
+PERSONAGENS
+Protagonista
+Antagonista
+TEXTO
+O Líder dos cavaleiros
+Protagonista
+recua, depois de dois dias volta para batalha e decide:
+VARIACOES
++50
+0
+
+
+CAPITULO
+ID
+MagosGanham
+PERSONAGENS
+Protagonista
+Antagonista
+TEXTO
+Os magos e seu líder
+Antagonista
+durante os dois dias treinaram muito e com isso bloquearam o ataque dos cavaleiros e por fim, os magos ganharam a guerra.
+VARIACOES
+-100
+0
+
+
+CAPITULO
+ID
+Paz
+PERSONAGENS
+Protagonista
+Antagonista
+TEXTO
+Os cavaleiros fazem um acordo de paz com os magos e seus líderes
+Protagonista
+Antagonista
+e a guerra é finalizada com essa aliança.
+VARIACOES
+0
+0
+
+
+ESCOLHA
+DE
+Raiz
+PARA
+CavaleirosGanham
+TEXTODIGITADO
+Ataca
+TEXTOMOSTRADO
+O líder dos cavaleiros [Ataca]
+
+
+ESCOLHA
+DE
+Raiz
+PARA
+CavaleiroDecide
+TEXTODIGITADO
+Recua
+TEXTOMOSTRADO
+O líder dos cavaleiros [Recua]
+
+
+ESCOLHA
+DE
+CavaleiroDecide
+PARA
+MagosGanham
+TEXTODIGITADO
+Ataca
+TEXTOMOSTRADO
+O líder dos cavaleiros [Ataca]
+
+ESCOLHA
+DE
+CavaleiroDecide
+PARA
+Paz
+TEXTODIGITADO
+Fazer um acordo de paz
+TEXTOMOSTRADO
+O líder dos cavaleiros decide [Fazer um acordo de paz] 
+

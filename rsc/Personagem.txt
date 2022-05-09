@@ -1,0 +1,8 @@
+Protagonista
+Gabriel
+100
+
+Antagonista
+Manuel
+100
+
