@@ -13,7 +13,7 @@ public class App {
 
         Map<String, Capitulo> capitulos = leitor.carregarCapitulos("rsc/Capitulos.txt", personagens, srDoConsole);
 
-        System.out.println(" Carregamento finalizado \n\n...\n");
+        System.out.println(" Carregamento Concluído \n\n...\n");
 
         Capitulo raiz = capitulos.get("raiz");
          raiz.executar();
