@@ -9,6 +9,7 @@ public class Capitulo {
     private Personagem personagem2;
     private int variacaoEnergia1;
     private int variacaoEnergia2;
+    
 
     protected Capitulo()
     { 
@@ -35,6 +36,7 @@ public class Capitulo {
             int i) {
         this.LerCapitulo(personagens, srDeArquivos, i);
         this.escolhas = new ArrayList<Escolha>();
+        
     }
 
     public String getTexto() {

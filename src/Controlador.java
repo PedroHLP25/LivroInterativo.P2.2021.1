@@ -1,11 +1,15 @@
 import java.util.ArrayList;
 import java.util.Map;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 
 public class Controlador {
 
@@ -14,20 +18,23 @@ public class Controlador {
    
 
     @FXML
-    private Button botaoCarregar;
+    public Button botaoCarregar;
 
     @FXML
-    private TextArea textoCapitulo;
+    public TextArea textoCapitulo;
 
     @FXML
-    private TextArea imagemAscii;
+    public TextArea imagemAscii;
 
     @FXML
-    private ButtonBar botoesEscolha;
+    private VBox vboxEscolhas;
+ 
+    
 
     @FXML
     void iniciarHistoria(ActionEvent event) {
-
+        
+        
         LeitorDeArquivos leitor = new LeitorDeArquivos();
         Map<String, Personagem> personagens = leitor.carregarPersonagem("rsc/Personagem.txt");
 
@@ -39,6 +46,7 @@ public class Controlador {
         
         botaoCarregar.setVisible(false);
         mostrarCapitulo(raiz);
+        
          //raiz.executar();
 
     }
@@ -48,6 +56,7 @@ public class Controlador {
         mostrarTextoCapitulo(capitulo.getTexto());
         mostrarEscolhas(capitulo.getEscolhas());
     }
+    
 
     public void mostrarTextoCapitulo(String texto)
     {
@@ -56,16 +65,30 @@ public class Controlador {
 
     public void mostrarImagemAscii(String imagem)
     {
+      
      imagemAscii.setText(imagem);
     }
 
     public void mostrarEscolhas(ArrayList<Escolha> escolhas) 
     {
-        botoesEscolha.setPadding(new Insets(10));
+        vboxEscolhas.setPadding(new Insets(10));
+        vboxEscolhas.getChildren().clear();
 
-        for (int i = 0; i < escolhas.size(); i++) {
+        for (int i = 0; i < escolhas.size(); i++) 
+        
+        {
+
+            BotaoEscolha botao = new BotaoEscolha(escolhas.get(i));
+            botao.setOnAction(new EventHandler<ActionEvent>() {
+
+                @Override
+                public void handle(ActionEvent event) {
+                    mostrarCapitulo(botao.getEscolha().getSeguinte()); 
+                }
+                
+            });
             
-            botoesEscolha.getButtons().add(new Button(escolhas.get(i).getTextoMostrado()));
+            vboxEscolhas.getChildren().add(botao);
             
             //System.out.println("-" + escolhas.get(i).getTextoMostrado() + "\n");
         }

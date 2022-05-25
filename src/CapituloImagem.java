@@ -3,7 +3,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class CapituloImagem extends Capitulo {
-    private String imagem;
+    protected String imagem;
 
     public CapituloImagem(Map<String, Personagem> personagens,
     Scanner srDeArquivos, 
@@ -12,6 +12,7 @@ public class CapituloImagem extends Capitulo {
        super();
        this.LerCapitulo(personagens, srDeArquivos, i);
        this.escolhas = new ArrayList<Escolha>();
+       
     }
   
     protected void LerCapitulo(Map<String, Personagem> personagens,
@@ -35,5 +36,7 @@ public class CapituloImagem extends Capitulo {
         System.out.println("- - -");
         super.mostrar();
         }
+
+     
     }
 
