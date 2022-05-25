@@ -6,12 +6,11 @@ public class CapituloImagem extends Capitulo {
     private String imagem;
 
     public CapituloImagem(Map<String, Personagem> personagens,
-    Scanner srDeArquivos, Scanner srDoConsole,
+    Scanner srDeArquivos, 
     int i)
     {
        super();
        this.LerCapitulo(personagens, srDeArquivos, i);
-       this.sr = srDoConsole;
        this.escolhas = new ArrayList<Escolha>();
     }
   

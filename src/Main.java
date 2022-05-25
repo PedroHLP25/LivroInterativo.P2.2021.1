@@ -12,24 +12,10 @@ import javafx.stage.Stage;
 
 //import java.util.Scanner;
 
-public class App extends Application {
-    public static void main(String[] args) throws Exception {
-
-        Scanner srDoConsole = new Scanner(System.in, "CP850");
-
-        LeitorDeArquivos leitor = new LeitorDeArquivos();
-        Map<String, Personagem> personagens = leitor.carregarPersonagem("rsc/Personagem.txt");
-
-        Map<String, Capitulo> capitulos = leitor.carregarCapitulos("rsc/Capitulos.txt", personagens, srDoConsole);
-
-        System.out.println(" Carregamento Concluído com sucesso \n\n...\n");
-
-        Capitulo raiz = capitulos.get("raiz");
-         //raiz.executar();
-        srDoConsole.close();
-
+public class Main extends Application {
+    public static void main(String[] args) throws Exception 
+    {
         launch(args);
-
     };
 
     @Override

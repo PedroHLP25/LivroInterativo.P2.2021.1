@@ -9,7 +9,6 @@ public class Capitulo {
     private Personagem personagem2;
     private int variacaoEnergia1;
     private int variacaoEnergia2;
-    protected Scanner sr;
 
     protected Capitulo()
     { 
@@ -27,17 +26,19 @@ public class Capitulo {
         this.personagem2 = personagem2;
         this.variacaoEnergia1 = variacaoEnergia1;
         this.variacaoEnergia2 = variacaoEnergia2;
-        this.sr = sr;
         this.escolhas = new ArrayList<Escolha>();
 
     }
 
     public Capitulo(Map<String, Personagem> personagens,
-            Scanner srDeArquivos, Scanner srDoConsole,
+            Scanner srDeArquivos, 
             int i) {
         this.LerCapitulo(personagens, srDeArquivos, i);
-        this.sr = srDoConsole;
         this.escolhas = new ArrayList<Escolha>();
+    }
+
+    public String getTexto() {
+         return this.texto;
     }
 
     protected void LerCapitulo(Map<String, Personagem> personagens,
@@ -113,7 +114,8 @@ public class Capitulo {
         else {
 
             while (!escolhaValida) {
-                escolha = sr.nextLine();
+                //escolha = sr.nextLine();
+                escolha = "";
 
                 for (int i = 0; i < escolhas.size(); i++) {
 
@@ -133,6 +135,10 @@ public class Capitulo {
         }
 
         return resultado;
+    }
+
+    public ArrayList<Escolha> getEscolhas() {
+        return escolhas;
     }
 
 }
