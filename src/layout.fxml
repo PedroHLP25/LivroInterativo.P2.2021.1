@@ -1,25 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorNomePersonagem">
+<VBox prefHeight="659.0" prefWidth="654.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorNomePersonagem">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="710.0" prefWidth="629.0" VBox.vgrow="ALWAYS">
       <children>
-            <Label layoutX="240.0" layoutY="66.0" prefHeight="41.0" prefWidth="177.0" text="Livro Interativo">
+            <Label layoutX="161.0" layoutY="27.0" prefHeight="64.0" prefWidth="321.0" text="O   Reino de Teragon" textFill="#8a0000">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Impact" size="36.0" />
                </font>
             </Label>
-            <TextField fx:id="textFieldNomePersonagem" layoutX="225.0" layoutY="194.0" prefHeight="25.0" prefWidth="200.0" />
-            <Label fx:id="lableNomePersonagem" layoutX="264.0" layoutY="148.0" text="Nome do Personagem:" />
-            <Button fx:id="botaoIniciar" layoutX="295.0" layoutY="246.0" mnemonicParsing="false" onAction="#salvarNomePersonagem" prefHeight="35.0" prefWidth="67.0" text="Iniciar" />
+            <TextArea fx:id="textoCapitulo" layoutX="58.0" layoutY="112.0" prefHeight="193.0" prefWidth="563.0" text="..." wrapText="true">
+               <font>
+                  <Font name="Georgia" size="24.0" />
+               </font>
+            </TextArea>
+            <TextArea fx:id="imagemAscii" layoutX="58.0" layoutY="330.0" prefHeight="193.0" prefWidth="563.0" text="..." visible="false" wrapText="true" />
+            <ButtonBar fx:id="botoesEscolha" layoutX="58.0" layoutY="539.0" prefHeight="95.0" prefWidth="563.0">
+               <cursor>
+                  <Cursor fx:constant="E_RESIZE" />
+               </cursor>
+               <effect>
+                  <Glow />
+               </effect>
+            </ButtonBar>
       </children>
          <effect>
             <ColorAdjust />
