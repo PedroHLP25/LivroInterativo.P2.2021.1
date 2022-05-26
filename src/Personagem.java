@@ -1,3 +1,12 @@
+/**Classe Personagem que armazena todas as informações 
+ * relativas aos personagens da história
+ * as informações armazenadas são:
+ * <ul> 
+ * <li> private String nome;
+ * <li> private int energia;
+ * </u>
+ */
+
 public class Personagem {
 
      private String nome;
@@ -24,10 +33,10 @@ public class Personagem {
 
     public void ajustarEnergia (int variacao) {
 
-            if(variacao != 0)
-            {      setEnergia(this.energia + variacao);
+      if(variacao != 0)
+        {      setEnergia(this.energia + variacao);
              
-                System.out.println("Por conta dos acontecimentos atuais a energia de "
+         System.out.println("Por conta dos acontecimentos atuais a energia de "
                  + this.nome+
                   " foi a"+this.energia)
                 ;}
@@ -37,7 +46,10 @@ public class Personagem {
        
     
     
-
+       /** O Método setEnergia serve para evitar que a energia do personagem
+        * seja menor que 0.
+     */
+  
     private void setEnergia(int energia)
   {
       this.energia = energia ;

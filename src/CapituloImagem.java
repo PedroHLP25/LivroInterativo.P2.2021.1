@@ -2,6 +2,13 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Scanner;
 
+/** A classe CapituloImagem estende a classe Capitulo, com o objetivo
+ * de auxiliar o controlador com a informação armazena:
+ * <ul>
+ * <li> protected String imagem;
+ * </ul>
+ */
+
 public class CapituloImagem extends Capitulo {
     protected String imagem;
 
@@ -14,7 +21,9 @@ public class CapituloImagem extends Capitulo {
        this.escolhas = new ArrayList<Escolha>();
        
     }
-  
+ /** Método de leitura para identificar se é um capitulo ou capitulo com Imagem
+     */
+
     protected void LerCapitulo(Map<String, Personagem> personagens,
     Scanner srDeArquivos,
     int i)
@@ -30,13 +39,17 @@ public class CapituloImagem extends Capitulo {
       }
      }
 
+  /** Método para mostrar a imagem
+     */
 
     protected void mostrar() {
         System.out.println(this.imagem);
         System.out.println("- - -");
-        super.mostrar();
+        
         }
 
-     
+    public void ajustarEnergia() {
+    }
+    
     }
 

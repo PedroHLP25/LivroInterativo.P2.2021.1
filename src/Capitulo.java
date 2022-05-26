@@ -2,6 +2,17 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Map;
 
+/**Classe que armazena todas as informações relativas à um capítulo da história
+ * as informações armazenadas são:
+ * <ul> 
+ * <li> private String texto;
+ * <li> protected ArrayList<Escolha> escolhas;
+ * <li> private Personagem personagem1;
+ * <li> private Personagem personagem2;
+ * <li> private int variacaoEnergia1;
+ * <li> private int variacaoEnergia2;
+ * </u>
+ */
 public class Capitulo {
     private String texto;
     protected ArrayList<Escolha> escolhas;
@@ -10,7 +21,9 @@ public class Capitulo {
     private int variacaoEnergia1;
     private int variacaoEnergia2;
     
-
+    /** Método para acessar o ArrayList de escolhas em questão.
+     */
+  
     protected Capitulo()
     { 
         this.texto = "";
@@ -43,6 +56,11 @@ public class Capitulo {
          return this.texto;
     }
 
+     /** Metodo para ler o capitulo e armazenar esse dados sobre os personagens
+     * @return e o texto. 
+     * 
+     */
+  
     protected void LerCapitulo(Map<String, Personagem> personagens,
             Scanner srDeArquivos,
             int i) {
@@ -81,66 +99,21 @@ public class Capitulo {
         escolhas.add(escolha);
     }
 
-    public void executar() {
-        // Mostrando o texto do capítulo e das escolhas
-        mostrar();
-        // Permitindo que o usuário realize sua escolha,caso existam escolhas possíveis
-        if (escolhas.size() > 0) {
-            int idCapituloEscolhido = escolher();
-            escolhas.get(idCapituloEscolhido).getSeguinte().executar();
-        }
-
-    }
-
-    protected void mostrar() {
-        System.out.println(texto);
-        personagem1.ajustarEnergia(variacaoEnergia1);
-        personagem2.ajustarEnergia(variacaoEnergia2);
-
-        for (int i = 0; i < escolhas.size(); i++) {
-            System.out.println("-" + escolhas.get(i).getTextoMostrado() + "\n");
-        }
-    }
-
-    private int escolher() {
-        int resultado = 0;
-
-        String escolha;
-
-        boolean escolhaValida = false;
-
-        if (escolhas.size() == 0) {
-            System.out.println("A batalha acabou,reinicie a história para uma nova batalha!");
-        }
-
-        else {
-
-            while (!escolhaValida) {
-                //escolha = sr.nextLine();
-                escolha = "";
-
-                for (int i = 0; i < escolhas.size(); i++) {
-
-                    if (escolha.equals(escolhas.get(i).getTextoDigitado())) {
-                        escolhaValida = true;
-                        resultado = i;
-                    }
-
-                }
-
-                if (!escolhaValida) {
-                    System.out.println("A escolha digitada não é válida, digite novamente");
-                    escolhaValida = false;
-                }
-            }
-
-        }
-
-        return resultado;
-    }
 
     public ArrayList<Escolha> getEscolhas() {
         return escolhas;
     }
+
+    public void ajustarEnergia() {
+
+        personagem1.ajustarEnergia(variacaoEnergia1);
+        personagem2.ajustarEnergia(variacaoEnergia2);
+
+    }
+
+
+    
+
+    
 
 }

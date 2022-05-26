@@ -4,9 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+/** A Classe LeitorDeArquivos ajuda a carregar personagens e capítulos.
+ * Além disso,lê e armazena as escolhas em questão.
+ * Não possui um construtor só o padrão e não possui atributos.
+ */
 public class LeitorDeArquivos {
     public HashMap<String, Personagem> carregarPersonagem(String caminho) {
-        HashMap<String, Personagem> personagens = new HashMap<String, Personagem>();
+ HashMap<String, Personagem> personagens = new HashMap<String, Personagem>();
 
         File arquivo = new File(caminho);
         try {
@@ -46,23 +50,24 @@ public class LeitorDeArquivos {
             System.out.println("Carregando capitulos .....");
             String linha = srDeArquivos.nextLine();
             int i = 0;
-            while (srDeArquivos.hasNextLine()) {
+    while (srDeArquivos.hasNextLine()) {
 
-                if (linha.equals("CAPITULO") || 
-                linha.equals("CAPITULO_COM_IMAGEM")) {
+        if (linha.equals("CAPITULO") || 
+           linha.equals("CAPITULO_COM_IMAGEM")) {
 
-                    srDeArquivos.nextLine(); // ID
-                    String id = srDeArquivos.nextLine().toLowerCase();
+            srDeArquivos.nextLine(); // ID
+            String id = srDeArquivos.nextLine().toLowerCase();
 
-                    if(linha.equals("CAPITULO"))
-                    {
-                        capitulos.put(id, new Capitulo(personagens, srDeArquivos, i));
-                    }
+            if(linha.equals("CAPITULO"))
+             {
+                capitulos.put(id, new Capitulo(personagens, srDeArquivos, i));
+             }
                     
-                    else if(linha.equals("CAPITULO_COM_IMAGEM"))
-                    {
-                        capitulos.put(id, new CapituloImagem(personagens, srDeArquivos, i));
-                    }
+            else if(linha.equals("CAPITULO_COM_IMAGEM"))
+             {
+              capitulos.put(id, new CapituloImagem(personagens,
+              srDeArquivos, i));
+             }
 
                     System.out.println("Capitulo" + id);
                     srDeArquivos.nextLine(); // \n
@@ -85,8 +90,13 @@ public class LeitorDeArquivos {
 
         return capitulos;
     }
-
-    private void LerEscolha(HashMap<String, Capitulo> capitulos, Scanner srDeArquivos) {
+   /** O método LerEscolha, lê as escolhas de acordo com algumas informações 
+    * no bloco de texto em questão são elas De, PARA ,TEXTO DIGITADO e TEXTO
+    MOSTRADO.E a partir disso dá pra ir entendendo as ordens das escolhas que 
+    leva de um capitulo para outro e mostra o TEXTO DIGITADO ou MOSTRADO.
+ */
+    private void LerEscolha(HashMap<String, Capitulo> capitulos, 
+    Scanner srDeArquivos) {
 
         srDeArquivos.nextLine(); // DE
         String idCapituloDe = srDeArquivos.nextLine().toLowerCase();

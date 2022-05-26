@@ -11,6 +11,18 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
+/**Classe responsável por iniciar a história,capturar os eventos
+ *  e executar/controlar tudo junto com a integração ao SceneBuilder e possui 
+ * os atributos:
+ *  * <ul> 
+ * <li> private Capitulo raiz;
+ * <li>  @FXML public Button botaoCarregar;   
+ * <li>  public TextArea textoCapitulo;
+ * <li>  public TextArea imagemAscii;
+ * <li>  private VBox vboxEscolhas;
+ * </u>
+ */
+
 public class Controlador {
 
     private Capitulo raiz;
@@ -35,28 +47,40 @@ public class Controlador {
     void iniciarHistoria(ActionEvent event) {
         
         
-        LeitorDeArquivos leitor = new LeitorDeArquivos();
-        Map<String, Personagem> personagens = leitor.carregarPersonagem("rsc/Personagem.txt");
+LeitorDeArquivos leitor = new LeitorDeArquivos();
+ Map<String, Personagem> personagens = leitor.carregarPersonagem
+ ("rsc/Personagem.txt");
 
-        Map<String, Capitulo> capitulos = leitor.carregarCapitulos("rsc/Capitulos.txt", personagens);
+ Map<String, Capitulo> capitulos = leitor.carregarCapitulos
+ ("rsc/Capitulos.txt", personagens);
 
-        System.out.println(" Carregamento Concluído com sucesso \n\n...\n");
-
-        raiz = capitulos.get("raiz");
+  System.out.println(" Carregamento Concluído com sucesso \n\n...\n");
+  
+  
+  
+   
+    
+  raiz = capitulos.get("raiz");
         
-        botaoCarregar.setVisible(false);
-        mostrarCapitulo(raiz);
+    botaoCarregar.setVisible(false);
+    mostrarCapitulo(raiz);
+    
         
-         //raiz.executar();
+         
 
     }
-
+   /** O método mostrarCapitulo mostra o texto dos capitulos,ajusta a energia 
+    * dos personagens e captura as escolhas.
+ */
     private void mostrarCapitulo(Capitulo capitulo) 
     {
+        
+        capitulo.ajustarEnergia();
         mostrarTextoCapitulo(capitulo.getTexto());
         mostrarEscolhas(capitulo.getEscolhas());
     }
     
+   
 
     public void mostrarTextoCapitulo(String texto)
     {
@@ -81,16 +105,20 @@ public class Controlador {
             BotaoEscolha botao = new BotaoEscolha(escolhas.get(i));
             botao.setOnAction(new EventHandler<ActionEvent>() {
 
-                @Override
-                public void handle(ActionEvent event) {
-                    mostrarCapitulo(botao.getEscolha().getSeguinte()); 
+    @Override
+     public void handle(ActionEvent event) {
+    
+     
+        mostrarCapitulo(botao.getEscolha().getSeguinte()); 
+      
+                    
                 }
                 
             });
             
             vboxEscolhas.getChildren().add(botao);
             
-            //System.out.println("-" + escolhas.get(i).getTextoMostrado() + "\n");
+            
         }
     }
 
